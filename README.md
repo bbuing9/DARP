@@ -15,7 +15,7 @@ by Jaehyung Kim, Youngbum Hur, Sejun Park, Eunho Yang, Sung Ju Hwang, and Jinwoo
 ## Scripts
 Please check out `run.sh` for the scripts to run the baseline algorithms and ours (DARP).
 
-### Training procedure of M2m 
+### Training procedure of DARP 
 Train a network with baseline algorithm, e.g., MixMatch
 ```
 python train_mix.py --gpu 0 --ratio 2 --num_max 1500 --imb_ratio_l 100 --imb_ratio_u 1 \
