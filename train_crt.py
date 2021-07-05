@@ -54,7 +54,7 @@ parser.add_argument('--imb_ratio_u', type=int, default=100,
                         help='Imbalance ratio for unlabeled data')
 parser.add_argument('--val-iteration', type=int, default=500,
                         help='Frequency for the evaluation')
-parser.add_argument('--mix_alpha', default=0, type=float)
+parser.add_argument('--mix_alpha', default=0.75, type=float)
 parser.add_argument('--ema-decay', default=0.999, type=float)
 
 args = parser.parse_args()
