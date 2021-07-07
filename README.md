@@ -2,7 +2,7 @@
 
 This repository contains code for the paper
 **"Distribution Aligning Refinery of Pseudo-label for Imbalanced Semi-supervised Learning"** 
-by Jaehyung Kim, Youngbum Hur, Sejun Park, Eunho Yang, Sung Ju Hwang, and Jinwoo Shin.
+by [Jaehyung Kim](https://sites.google.com/view/jaehyungkim), Youngbum Hur, Sejun Park, Eunho Yang, Sung Ju Hwang, and Jinwoo Shin.
 
 ## Dependencies
 
