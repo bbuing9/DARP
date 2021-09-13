@@ -41,7 +41,7 @@ def parse_args():
     parser.add_argument('--tau', default=0.95, type=float, help='hyper-parameter for pseudo-label of FixMatch')
 
     # Hyperparameters for DARP
-    parser.add_argument('--warm', type=int, default=200, help='Number of warm up epoch for DARP')
+    parser.add_argument('--warm', type=int, default=500, help='Number of warm up epoch for DARP')
     parser.add_argument('--alpha', default=2.0, type=float, help='hyperparameter for removing noisy entries')
     parser.add_argument('--darp', action='store_true', help='Applying DARP')
     parser.add_argument('--est', action='store_true', help='Using estimated distribution for unlabeled dataset')
