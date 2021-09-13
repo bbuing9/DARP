@@ -16,13 +16,13 @@ by [Jaehyung Kim](https://sites.google.com/view/jaehyungkim), Youngbum Hur, Seju
 Please check out `run.sh` for the scripts to run the baseline algorithms and ours (DARP).
 
 ### Training procedure of DARP 
-Train a network with baseline algorithm, e.g., MixMatch
+Train a network with baseline algorithm, e.g., MixMatch on CIFAR-10
 ```
-python train_mix.py --gpu 0 --ratio 2 --num_max 1500 --imb_ratio_l 100 --imb_ratio_u 1 \
---epoch 500 --val-iteration 500 --out cifar10@N_1500_r_100_1_mix
+python train.py --gpu 0 --semi_method mix --dataset cifar10 --ratio 2 --num_max 1500 --imb_ratio_l 100 --imb_ratio_u 1 \
+--epoch 500 --val-iteration 500
 ```
 Applying DARP on the baseline algorithm
 ```
-#python train_mix.py --darp --est --alpha 2 --warm 200 --gpu 0 --ratio 2 --num_max 1500 --imb_ratio_l 100 --imb_ratio_u 1  \
---epoch 500 --val-iteration 500 --out cifar10@N_1500_r_100_1_mix_darp 
+#python train.py --gpu 0 --darp --est --alpha 2 --warm 200 --semi_method mix --dataset cifar10 --ratio 2 --num_max 1500 --imb_ratio_l 100 --imb_ratio_u 1  \
+--epoch 500 --val-iteration 500
 ```
