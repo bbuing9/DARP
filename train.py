@@ -49,10 +49,7 @@ else:
     args.num_class = 10
 
 if args.semi_method == 'remix':
-    # verified
     args.lambda_u = 1.5
-
-print(args.lambda_u)
 
 def main():
     global best_acc
