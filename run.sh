@@ -10,7 +10,7 @@
 # Table 1 
 #python train.py --semi_method remix --gpu 0 --dataset cifar10 --darp --align --alpha 2 --warm 200 --ratio 2 --num_max 1500 --imb_ratio_l 150 --imb_ratio_u 150 --epoch 500 --val-iteration 500
 # Table 2
-python train.py --semi_method remix --gpu 0 --dataset cifar10 --darp --est --align --alpha 2 --warm 200 --ratio 2 --num_max 1500 --imb_ratio_l 100 --imb_ratio_u 1 --epoch 500 --val-iteration 500
+#python train.py --semi_method remix --gpu 0 --dataset cifar10 --darp --est --align --alpha 2 --warm 200 --ratio 2 --num_max 1500 --imb_ratio_l 100 --imb_ratio_u 1 --epoch 500 --val-iteration 500
 
 ## CIFAR-100 & STL-10
 # Original
