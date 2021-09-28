@@ -9,6 +9,7 @@ by [Jaehyung Kim](https://sites.google.com/view/jaehyungkim), Youngbum Hur, Seju
 * `python3`
 * `pytorch == 1.1.0`
 * `torchvision`
+* `progress`
 * `scipy`
 * `randAugment (Pytorch re-implementation: https://github.com/ildoonet/pytorch-randaugment)`
 
