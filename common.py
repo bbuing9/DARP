@@ -38,8 +38,8 @@ def validate(valloader, model, criterion, use_cuda, mode, num_class=10):
     end = time.time()
     bar = Bar(f'{mode}', max=len(valloader))
 
-    classwise_correct = torch.zeros(num_class)
-    classwise_num = torch.zeros(num_class)
+    classwise_correct = torch.zeros(num_class).cuda()
+    classwise_num = torch.zeros(num_class).cuda()
     section_acc = torch.zeros(3)
 
     with torch.no_grad():
@@ -212,11 +212,12 @@ class WeightEMA(object):
     def step(self):
         one_minus_alpha = 1.0 - self.alpha
         for param, ema_param in zip(self.params, self.ema_params):
-            # print(ema_param.mean())
+            ema_param=ema_param.float()
+            param=param.float()
             ema_param.mul_(self.alpha)
             ema_param.add_(param * one_minus_alpha)
-            # customized weight decay
             param.mul_(1 - self.wd)
+
 
 def interleave_offsets(batch, nu):
     groups = [batch // (nu + 1)] * (nu + 1)

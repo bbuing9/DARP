@@ -86,7 +86,7 @@ def main():
     U_SAMPLES_PER_CLASS = make_imb_data(args.ratio * args.num_max, num_class, args.imb_ratio_u)
     N_SAMPLES_PER_CLASS_T = torch.Tensor(N_SAMPLES_PER_CLASS)
 
-    train_labeled_set, train_unlabeled_set, test_set = dataset.get_cifar10('/home/jaehyung/data', N_SAMPLES_PER_CLASS,
+    train_labeled_set, train_unlabeled_set, test_set = dataset.get_cifar10('./data', N_SAMPLES_PER_CLASS,
                                                                            U_SAMPLES_PER_CLASS)
     labeled_trainloader = data.DataLoader(train_labeled_set, batch_size=args.batch_size, shuffle=True, num_workers=4, drop_last=True)
     test_loader = data.DataLoader(test_set, batch_size=args.batch_size, shuffle=False, num_workers=4)
