@@ -38,8 +38,8 @@ def validate(valloader, model, criterion, use_cuda, mode, num_class=10):
     end = time.time()
     bar = Bar(f'{mode}', max=len(valloader))
 
-    classwise_correct = torch.zeros(num_class).cuda()
-    classwise_num = torch.zeros(num_class).cuda()
+    classwise_correct = torch.zeros(num_class)
+    classwise_num = torch.zeros(num_class)
     section_acc = torch.zeros(3)
 
     with torch.no_grad():
@@ -65,8 +65,8 @@ def validate(valloader, model, criterion, use_cuda, mode, num_class=10):
             for i in range(num_class):
                 class_mask = (targets == i).float()
 
-                classwise_correct[i] += (class_mask * pred_mask).sum()
-                classwise_num[i] += class_mask.sum()
+                classwise_correct[i] += (class_mask * pred_mask).sum().cpu()
+                classwise_num[i] += class_mask.sum().cpu()
 
              # measure elapsed time
             batch_time.update(time.time() - end)
@@ -102,7 +102,7 @@ def validate(valloader, model, criterion, use_cuda, mode, num_class=10):
         else:
             GM *= (classwise_acc[i]) ** (1/num_class)
 
-    return (losses.avg, top1.avg, section_acc.numpy(), GM)
+    return (losses.avg, top1.avg, section_acc.numpy(), GM.numpy())
 
 def estimate_pseudo(q_y, saved_q, num_class=10, alpha=2):
     pseudo_labels = torch.zeros(len(saved_q), num_class)
