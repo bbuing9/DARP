@@ -75,14 +75,14 @@ def main():
 
     if args.dataset == 'cifar10':
         print(f'==> Preparing imbalanced CIFAR-10')
-        train_labeled_set, train_unlabeled_set, test_set = get_cifar10('/home/jaehyung/data', N_SAMPLES_PER_CLASS,
+        train_labeled_set, train_unlabeled_set, test_set = get_cifar10('./data', N_SAMPLES_PER_CLASS,
                                                                                U_SAMPLES_PER_CLASS, args.out)
     elif args.dataset == 'stl10':
         print(f'==> Preparing imbalanced STL-10')
-        train_labeled_set, train_unlabeled_set, test_set = get_stl10('/home/jaehyung/data', N_SAMPLES_PER_CLASS, args.out)
+        train_labeled_set, train_unlabeled_set, test_set = get_stl10('./data', N_SAMPLES_PER_CLASS, args.out)
     elif args.dataset == 'cifar100':
         print(f'==> Preparing imbalanced CIFAR-100')
-        train_labeled_set, train_unlabeled_set, test_set = get_cifar100('/home/jaehyung/data', N_SAMPLES_PER_CLASS,
+        train_labeled_set, train_unlabeled_set, test_set = get_cifar100('./data', N_SAMPLES_PER_CLASS,
                                                                                 U_SAMPLES_PER_CLASS, args.out)
     labeled_trainloader = data.DataLoader(train_labeled_set, batch_size=args.batch_size, shuffle=True, num_workers=4,
                                           drop_last=True)

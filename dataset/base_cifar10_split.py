@@ -26,7 +26,7 @@ transform_val = transforms.Compose([
 
 def get_cifar10(root, l_samples, u_samples, num_val,
                  transform_train=transform_train, transform_val=transform_val,
-                 download=False):
+                 download=True):
 
     base_dataset = torchvision.datasets.CIFAR10(root, train=True, download=download)
     train_labeled_idxs, train_unlabeled_idxs, val_idxs = train_val_split(base_dataset.targets, l_samples, u_samples,

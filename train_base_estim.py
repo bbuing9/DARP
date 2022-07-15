@@ -86,7 +86,7 @@ def main():
     N_SAMPLES_PER_CLASS = make_imb_data(args.num_max, 10, args.imb_ratio_l)
     U_SAMPLES_PER_CLASS = make_imb_data(2 * args.num_max, 10, args.imb_ratio_u)
     U_SAMPLES_PER_CLASS_T = torch.Tensor(U_SAMPLES_PER_CLASS)
-    train_labeled_set, _, train_unlabeled_set, val_set, test_set = dataset.get_cifar10('/home/jaehyung/data',
+    train_labeled_set, _, train_unlabeled_set, val_set, test_set = dataset.get_cifar10('./data',
                                                                                        N_SAMPLES_PER_CLASS,
                                                                                        U_SAMPLES_PER_CLASS,
                                                                                        args.num_val)
